@@ -1,0 +1,163 @@
+div.dotsearch-autocomplete {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: var(--dotsearch-autocomplete-gap, 0.5rem);
+
+  width: var(--dotsearch-autocomplete-width, fit-content);
+  height: var(--dotsearch-autocomplete-height, fit-content);
+
+  padding: var(--dotsearch-autocomplete-padding, 0.5rem);
+
+  border: var(--dotsearch-autocomplete-border, 1px solid #ccc);
+  border-radius: var(--dotsearch-autocomplete-border-radius, 0.25rem);
+
+  background-color: var(--dotsearch-autocomplete-background-color, #fff);
+  color: var(--dotsearch-autocomplete-color, #000);
+
+  box-shadow: var(--dotsearch-autocomplete-box-shadow, none);
+
+  position: relative;
+
+  transition: var(--dotsearch-autocomplete-transition, all 0.2s);
+}
+
+div.dotsearch-autocomplete:focus-within {
+  border: var(--dotsearch-autocomplete-focus-within-border, 1px solid #ccc);
+
+  background-color: var(--dotsearch-autocomplete-focus-within-background-color, #fff);
+  color: var(--dotsearch-autocomplete-focus-within-color, #000);
+
+  box-shadow: var(--dotsearch-autocomplete-focus-within-box-shadow, none);
+}
+
+div.dotsearch-autocomplete-container {
+  display: flex;
+  flex-direction: column;
+  
+  width: 100%;
+}
+
+input.dotsearch-autocomplete-input {
+  width: var(--dotsearch-autocomplete-input-width, 100%);
+  height: var(--dotsearch-autocomplete-input-height, fit-content);
+
+  padding: var(--dotsearch-autocomplete-input-padding, 0);
+
+  border: var(--dotsearch-autocomplete-input-border, none);
+  border-radius: var(--dotsearch-autocomplete-input-border-radius, 0.25rem);
+
+  outline: var(--dotsearch-autocomplete-input-outline, none);
+
+  background-color: var(--dotsearch-autocomplete-input-background-color, transparent);
+  color: var(--dotsearch-autocomplete-input-color, #000);
+
+  box-shadow: var(--dotsearch-autocomplete-input-box-shadow, none);
+
+  font-size: var(--dotsearch-autocomplete-input-font-size, 1rem);
+  font-weight: var(--dotsearch-autocomplete-input-font-weight, 400);
+
+  position: relative;
+}
+
+input.dotsearch-autocomplete-input:focus {
+  border: var(--dotsearch-autocomplete-input-focus-border, none);
+  border-radius: var(--dotsearch-autocomplete-input-focus-border-radius, 0.25rem);
+
+  outline: var(--dotsearch-autocomplete-input-focus-outline, none);
+
+  background-color: var(--dotsearch-autocomplete-input-focus-background-color, transparent);
+  color: var(--dotsearch-autocomplete-input-focus-color, #000);
+}
+
+input.dotsearch-autocomplete-input:hover {
+  border: var(--dotsearch-autocomplete-input-hover-border, none);
+  border-radius: var(--dotsearch-autocomplete-input-hover-border-radius, 0.25rem);
+
+  outline: var(--dotsearch-autocomplete-input-hover-outline, none);
+
+  background-color: var(--dotsearch-autocomplete-input-hover-background-color, transparent);
+  color: var(--dotsearch-autocomplete-input-hover-color, #000);
+}
+
+input.dotsearch-autocomplete-input::placeholder {
+  color: var(--dotsearch-autocomplete-input-placeholder-color, #000);
+
+  font-size: var(--dotsearch-autocomplete-input-placeholder-font-size, 1rem);
+  font-weight: var(--dotsearch-autocomplete-input-placeholder-font-weight, 400);
+}
+
+div.dotsearch-autocomplete-results {
+  position: absolute;
+
+  top: var(--dotsearch-autocomplete-results-top, 100%);
+  left: var(--dotsearch-autocomplete-results-left, 0);
+  right: var(--dotsearch-autocomplete-results-right, 0);
+
+  width: var(--dotsearch-autocomplete-results-width, unset);
+  height: var(--dotsearch-autocomplete-results-height, fit-content);
+  max-height: var(--dotsearch-autocomplete-results-max-height, 300px);
+
+  margin: var(--dotsearch-autocomplete-results-margin, 10px 0 0 0);
+  padding: var(--dotsearch-autocomplete-results-padding, 0.5rem);
+
+  border: var(--dotsearch-autocomplete-results-border, 1px solid #ccc);
+  border-radius: var(--dotsearch-autocomplete-results-border-radius, 0.25rem);
+
+  background-color: var(--dotsearch-autocomplete-results-background-color, #fff);
+  color: var(--dotsearch-autocomplete-results-color, #000);
+
+  box-shadow: var(--dotsearch-autocomplete-results-box-shadow, none);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--dotsearch-autocomplete-results-gap, 0);
+
+  overflow-x: var(--dotsearch-autocomplete-results-overflow-x, hidden);
+  overflow-y: var(--dotsearch-autocomplete-results-overflow-y, scroll);
+}
+
+div.dotsearch-autocomplete-results.hidden {
+  display: var(--dotsearch-autocomplete-results-hidden-display, none);
+}
+
+div.dotsearch-autocomplete-results div.dotsearch-autocomplete-result-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: var(--dotsearch-autocomplete-result-empty-padding, 0.5rem);
+
+  font-size: var(--dotsearch-autocomplete-result-empty-font-size, 1rem);
+  font-weight: var(--dotsearch-autocomplete-result-empty-font-weight, 400);
+}
+
+div.dotsearch-autocomplete-results div.dotsearch-autocomplete-result-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: var(--dotsearch-autocomplete-result-loading-padding, 0.5rem);
+
+  font-size: var(--dotsearch-autocomplete-result-loading-font-size, 1rem);
+  font-weight: var(--dotsearch-autocomplete-result-loading-font-weight, 400);
+}
+
+div.dotsearch-autocomplete-results div.dotsearch-autocomplete-result-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--dotsearch-autocomplete-result-item-gap, 0.5rem);
+
+  padding: var(--dotsearch-autocomplete-result-item-padding, 0.5rem);
+
+  font-size: var(--dotsearch-autocomplete-result-item-font-size, 1rem);
+  font-weight: var(--dotsearch-autocomplete-result-item-font-weight, 400);
+
+  cursor: pointer;
+}

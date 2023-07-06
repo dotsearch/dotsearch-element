@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html dir="rtl" lang="fa">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
@@ -7,8 +7,27 @@
 
     <script type="module" src="/build/dotsearch-element.esm.js"></script>
     <script nomodule src="/build/dotsearch-element.js"></script>
+
+    <style>
+      dotsearch-autocomplete {
+        --dotsearch-autocomplete-height: 28px;
+        --dotsearch-autocomplete-width: 360px;
+        --dotsearch-autocomplete-border-radius: 8px;
+      }
+    </style>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <dotsearch-autocomplete
+      token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidHlwZSI6ImFwcCIsImlhdCI6MTY4ODQ2NjAxM30.F7uV007n79uszeqVvSiANd81RkrbUmA5UrtvVc6KwSo"
+      placeholder="دنبال چی هستید ؟"
+    >
+
+      <template slot="dotsearch-product">
+        <a href="#DOTSEARCH-PRODUCT-LINK" target="_blank" style="display: flex; flex-wrap: nowrap; align-items: center; gap: 10px">
+          <img src="#DOTSEARCH-PRODUCT-THUMBNAIL" width="32px" height="32px" />
+          <span style="font-size: 14px">#DOTSEARCH-PRODUCT-NAME</span>
+        </a>
+      </template>
+    </dotsearch-autocomplete>
   </body>
 </html>

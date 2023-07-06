@@ -6,56 +6,44 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface DotsearchAutocomplete {
+        "endpoint": string | undefined;
+        "fuzzines": 0 | 1 | 2;
+        "loading": boolean;
+        "placeholder": string;
+        "token": string;
+        "value": string;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLDotsearchAutocompleteElement extends Components.DotsearchAutocomplete, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLDotsearchAutocompleteElement: {
+        prototype: HTMLDotsearchAutocompleteElement;
+        new (): HTMLDotsearchAutocompleteElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "dotsearch-autocomplete": HTMLDotsearchAutocompleteElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface DotsearchAutocomplete {
+        "endpoint"?: string | undefined;
+        "fuzzines"?: 0 | 1 | 2;
+        "loading"?: boolean;
+        "placeholder"?: string;
+        "token"?: string;
+        "value"?: string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "dotsearch-autocomplete": DotsearchAutocomplete;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "dotsearch-autocomplete": LocalJSX.DotsearchAutocomplete & JSXBase.HTMLAttributes<HTMLDotsearchAutocompleteElement>;
         }
     }
 }

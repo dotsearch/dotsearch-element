@@ -21,4 +21,8 @@ export const config: Config = {
   testing: {
     browserHeadless: "new",
   },
+  devServer: {
+    port: 4444,
+    address: '0.0.0.0',
+  }
 };
